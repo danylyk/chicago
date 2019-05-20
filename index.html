@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Chicago</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <header>
+    <div class="head">Chicago</div>
+    <div class="menu">
+      <ul>
+        <li><a href="#">MENU ITEM 1</a></li>
+        <li>
+          <a href="#">MENU ITEM 2 +</a>
+          <ul>
+            <li><a href="#">MENU ITEM 2.1</a></li>
+            <li>
+              <a href="#">MENU ITEM 2.2 +</a>
+              <ul>
+                <li><a href="#">MENU ITEM 2.2.1</a></li>
+                <li><a href="#">MENU ITEM 2.2.2</a></li>
+                <li>
+                  <a href="#">MENU ITEM 2.2.3 +</a>
+                  <ul>
+                    <li><a href="#">MENU ITEM 2.2.3.1</a></li>
+                    <li><a href="#">MENU ITEM 2.2.3.2</a></li>
+                    <li><a href="#">MENU ITEM 2.2.3.3</a></li>
+                    <li><a href="#">MENU ITEM 2.2.3.4</a></li>
+                    <li><a href="#">MENU ITEM 2.2.3.5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">MENU ITEM 2.2.4</a></li>
+                <li><a href="#">MENU ITEM 2.2.5</a></li>
+              </ul>
+            </li>
+            <li><a href="#">MENU ITEM 2.3</a></li>
+            <li><a href="#">MENU ITEM 2.4</a></li>
+            <li><a href="#">MENU ITEM 2.5</a></li>
+          </ul>
+        </li>
+        <li><a href="#">MENU ITEM 3</a></li>
+        <li><a href="#">MENU ITEM 4</a></li>
+        <li><a href="#">MENU ITEM 5</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <h1>SELECT AREA</h1>
+    <select id="select">
+      <option value="0" selected="">NORTH</option>
+      <option value="1">WEST</option>
+    </select>
+
+    <div id="a0" class="area active">
+      <h2>NORTH AREA</h2>
+      <hr>
+      <div class="table">
+        <table border="1">
+          <tr>
+            <th>Table col name 1</th>
+            <th>Table col name 2</th>
+            <th>Table col name 3</th>
+            <th>Table col name 4</th>
+          </tr>
+          <tr>
+            <td>Item 1</td>
+            <td>Item 2</td>
+            <td>Item 3</td>
+            <td>Item 4</td>
+          </tr>
+          <tr>
+            <td>Item 5</td>
+            <td colspan="2" rowspan="2">Item 6</td>
+            <td>Item 7</td>
+          </tr>
+          <tr>
+            <td>Item 8</td>
+            <td>Item 9</td>
+          </tr>
+          <tr>
+            <td>Item 11</td>
+            <td>Item 12</td>
+            <td>Item 13</td>
+            <td>Item 14</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div id="a1" class="area">
+      <h2>WEST AREA</h2>
+      <hr>
+      <form method="POST" action="#">
+        <input type="text" required="" placeholder="Enter your name">
+        <input type="phone" required="" placeholder="Enter your phone">
+        <input type="email" required="" placeholder="Enter your email">
+        
+        <div class="c">
+          <input type="checkbox" id="c1" name="">
+          <label for="c1">C1</label>
+        </div>
+        <div class="c">
+          <input type="checkbox" id="c2" name="">
+          <label for="c2">C2</label>
+        </div>
+        <div class="c">
+          <input type="checkbox" id="c3" name="">
+          <label for="c3">C3</label>
+        </div>
+
+        <div>
+          <input type="radio" id="r1" name="n1"><label for="r1">R3</label>
+          <input type="radio" id="r2" name="n1"><label for="r2">R3</label>
+          <input type="radio" id="r3" name="n1"><label for="r3">R3</label>
+        </div>
+
+        <textarea placeholder="Enter your comment" required=""></textarea>
+
+        <div class="submit">
+          <button type="submit">SEND COMMENT</button>
+        </div>
+      </form>
+    </div>
+
+  </main>
+
+  <footer>
+    <img src="images/footer.png" alt="">
+  </footer>
+
+  <script type="text/javascript">
+    var select = document.getElementById('select');
+    var a0 = document.getElementById('a0');
+    var a1 = document.getElementById('a1');
+    select.addEventListener("change", function() {
+      if (select.value == 0) {
+        a0.className = "area active";
+        a1.className = "area";
+      } else {
+        a1.className = "area active";
+        a0.className = "area";
+      }
+    });
+
+    var a = 0;
+
+    window.addEventListener("scroll", function(){
+      select.style.background = "rgba(214,241,128,"+(a++/50)+")";
+      if (a > 100) {
+        a=0;
+      }
+    });
+  </script>
+</body>
+</html>
